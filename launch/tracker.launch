@@ -2,6 +2,10 @@
 
 	<arg name="tracker_name" default="kinect" />
 
+	<node pkg="tf" type="static_transform_publisher" name="world_to_kinect" 
+    args="1.05 2.40 1.33 -1.5708 0 0 /world /kinect_link 1000"/>
+
+
 	<node pkg="kinect2_tracker" type="kinect2_tracker_node" name="kinect2_tracker_node2">
 		<param name="tf_prefix" value="$(arg tracker_name)" />
     	<param name="relative_frame" value="/$(arg tracker_name)_camera_frame" />

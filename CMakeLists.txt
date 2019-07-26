@@ -85,8 +85,8 @@ add_library(kinect2_tracker
 ## either from message generation or dynamic reconfigure
 # add_dependencies(kinect2_tracker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-set(NITE2_DIR ~/package_ws/NiTE-Linux-x64-2.2/)
-set(NITE2_LIB ~/package_ws/NiTE-Linux-x64-2.2/Redist/libNiTE2.so)
+set(NITE2_DIR ~/kinect_ws/NiTE-Linux-x64-2.2/)
+set(NITE2_LIB ~/kinect_ws/NiTE-Linux-x64-2.2/Redist/libNiTE2.so)
 include_directories(./include/Openni2/)
 include_directories(${NITE2_DIR}/Include)
 include_directories(./include)
