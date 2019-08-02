@@ -44,7 +44,7 @@
 #define ALPHA 1/256
 #endif
 
-#define MAX_USERS 10
+#define MAX_USERS 1
 
 #define USER_MESSAGE(msg) \
         {printf("[%08llu] User #%d:\t%s\n",ts, user.getId(),msg);}
@@ -241,12 +241,15 @@ public:
       
         std::stringstream j_frame_id_stream; //stringstream of frame id values
         std::string j_frame_id; // string of the stringstream
-        j_frame_id_stream << "/" << tf_prefix_ << "/user_" << uid << "/" << j_name;
+        // j_frame_id_stream << "/" << tf_prefix_ << "/user_" << uid << "/" << j_name;
+        // dirty fixed for only publishing 1 user to tf
+        j_frame_id_stream << "/" << tf_prefix_ << "/user_" << 1 << "/" << j_name;
         j_frame_id = j_frame_id_stream.str();
 
         std::stringstream r_frame_id_stream; //stringstream of frame id values
         std::string r_frame_id; // string of the stringstream
-        r_frame_id_stream << "/" << tf_prefix_ << "/user_" << uid << "/" << r_name;
+        // r_frame_id_stream << "/" << tf_prefix_ << "/user_" << uid << "/" << r_name;
+        r_frame_id_stream << "/" << tf_prefix_ << "/user_" << 1 << "/" << r_name;
         r_frame_id = r_frame_id_stream.str();
         
         if (j_name == "torso")
